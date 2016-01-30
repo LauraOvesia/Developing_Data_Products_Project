@@ -1,0 +1,65 @@
+Risk Assessment Tool for Estimating Your 10 years Risk of Having a Heart Attack
+========================================================
+author: Laura Ovesia 
+date: Jan 30, 2016
+
+First Slide
+========================================================
+
+For more details on authoring R presentations click the
+**Help** button on the toolbar.
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+Database Structure
+========================================================
+
+```{r echo=FALSE}
+framingham <- read.csv("framingham.csv")
+
+newFramingham<- data.frame(age=framingham$age,male=framingham$male,totChol=framingham$totChol,currentSmoker=framingham$currentSmoker,diabetes=framingham$diabetes,sysBP=framingham$sysBP,BPMeds=framingham$BPMeds,TenYearCHD=framingham$TenYearCHD)
+
+str(newFramingham)
+```
+
+Sample results
+========================================================
+
+```{r, echo=FALSE}
+
+inValues <- data.frame(age =as.integer(1), 
+    male = as.integer(1), 
+    totChol=as.integer(200),
+    currentSmoker= as.integer(1),
+    diabetes=as.integer(0),
+    sysBP=as.numeric(200),
+    BPMeds=as.integer(0),
+    TenYearCHD=as.integer(0)
+  )
+
+framinghamLog = glm(TenYearCHD ~ ., data = newFramingham, family=binomial)
+
+predictTest = predict(framinghamLog, type="response", newdata=inValues)
+numericPredictText= as.numeric(predictTest)
+slices <- c(numericPredictText, 1-numericPredictText)
+lbls <- c("True", "False")
+
+
+pct <- round(slices/sum(slices)*100)
+lbls <- paste(lbls, pct) # add percents to labels 
+lbls <- paste(lbls,"%",sep="") # ad % to labels 
+pie(slices,labels = lbls, col=rainbow(length(lbls)),
+  	main="Probability to have a heart atack")
+
+```
+Conclusions
+========================================================
+The provided app here allows the user to:
+
+
+App URL: https://laurao.shinyapps.io/
+
+Documentation and Code: https://github.com/
+
