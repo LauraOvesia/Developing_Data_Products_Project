@@ -57,6 +57,6 @@ https://laurao.shinyapps.io/developing_data_productsProject/
 
 View the app on: https://laurao.shinyapps.io/developing_data_productsProject/
 
-Documentation and Code: https://github.com/LauraOvesia/developing_data_productsProject
+Documentation and Code: https://github.com/LauraOvesia/Developing_Data_Products_Project
 
 
