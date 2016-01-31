@@ -56,7 +56,7 @@ str(newFramingham)
 https://laurao.shinyapps.io/developing_data_productsProject/
 
 <div style='text-align: center;'>
-    <img height='460' src='Image1.png' />
+    <img height='460' src='http://lauraovesia.github.io/Developing_Data_Products_Project/Image1.png' />
 </div>
 
 ---
