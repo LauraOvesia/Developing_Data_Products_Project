@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Risk Assessment Tool for Estimating Your Ten Years Risk of Having a Heart Attack</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Risk Assessment Tool for Estimating Your Ten Years Risk of Having a Heart Attack">
+  <meta name="author" content="Laura Ovesia">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Risk Assessment Tool for Estimating Your Ten Years Risk of Having a Heart Attack</h1>
+    <h2>January 30 2016</h2>
+    <p>Laura Ovesia<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Summary</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The app will calculate the risk of heart attack for the next ten years, using a backend database and prediction algorithms. </p>
+
+<p>The prediction algorithm uses information from the Framingham Heart Study to predict a person&#39;s chance of developing cardiovascular disease in the next 10 years.</p>
+
+<p>More data about the Framingham Heart Study is available here:</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Framingham_Risk_Score">https://en.wikipedia.org/wiki/Framingham_Risk_Score</a></p>
+
+<p>The prediction algorithm is using GLM on a subset of the original database.
+The used structure is presented in the next slide.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Prediction Database Structure</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">framingham &lt;- read.csv(&quot;framingham.csv&quot;)
+newFramingham&lt;- data.frame(age=framingham$age,male=framingham$male,
+                    totChol=framingham$totChol,currentSmoker=framingham$currentSmoker,
+                    diabetes=framingham$diabetes,sysBP=framingham$sysBP,
+                    BPMeds=framingham$BPMeds,TenYearCHD=framingham$TenYearCHD)
+str(newFramingham)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    4240 obs. of  8 variables:
+##  $ age          : int  39 46 48 61 46 43 63 45 52 43 ...
+##  $ male         : int  1 0 1 0 0 0 0 0 1 1 ...
+##  $ totChol      : int  195 250 245 225 285 228 205 313 260 225 ...
+##  $ currentSmoker: int  0 0 1 1 1 0 0 1 0 1 ...
+##  $ diabetes     : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ sysBP        : num  106 121 128 150 130 ...
+##  $ BPMeds       : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ TenYearCHD   : int  0 0 0 1 0 0 1 0 0 0 ...
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Application</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><a href="https://laurao.shinyapps.io/developing_data_productsProject/">https://laurao.shinyapps.io/developing_data_productsProject/</a></p>
+
+<div style='text-align: center;'>
+    <img height='460' src='Image1.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Why use this app?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Calculate your heart attack risk for the next ten years.</p></li>
+<li><p>Determine witch factors contribute the most in the risk.</p></li>
+<li><p>Spark your interest in your personal health.</p></li>
+</ol>
+
+<p>View the app on: <a href="https://laurao.shinyapps.io/developing_data_productsProject/">https://laurao.shinyapps.io/developing_data_productsProject/</a></p>
+
+<p>Documentation and Code: <a href="https://github.com/LauraOvesia/developing_data_productsProject">https://github.com/LauraOvesia/developing_data_productsProject</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Summary'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Prediction Database Structure'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Application'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Why use this app?'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
