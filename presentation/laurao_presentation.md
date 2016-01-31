@@ -3,6 +3,7 @@ Risk Assessment Tool for Estimating Your 10 years Risk of Having a Heart Attack
 author: Laura Ovesia 
 date: Jan 30, 2016
 
+
 First Slide
 ========================================================
 
@@ -16,6 +17,12 @@ For more details on authoring R presentations click the
 Database Structure
 ========================================================
 
+
+```r
+framingham <- read.csv("framingham.csv")
+newFramingham<- data.frame(age=framingham$age,male=framingham$male,totChol=framingham$totChol,currentSmoker=framingham$currentSmoker,diabetes=framingham$diabetes,sysBP=framingham$sysBP,BPMeds=framingham$BPMeds,TenYearCHD=framingham$TenYearCHD)
+str(newFramingham)
+```
 
 ```
 'data.frame':	4240 obs. of  8 variables:
