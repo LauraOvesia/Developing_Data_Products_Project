@@ -63,7 +63,7 @@ shinyServer(function(input,output){
       str(newFramingham)
     })
     output$instructions <- renderText({  
-      readLines("Readme.html")  
+      readLines("instructions.html")  
     })
   
    

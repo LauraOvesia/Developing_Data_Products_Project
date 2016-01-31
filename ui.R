@@ -20,7 +20,7 @@ shinyUI(fluidPage(
    
      mainPanel(
        tabsetPanel(type="tab",
-                   tabPanel("Calculate prediction and results", h3("Personal information"),
+                   tabPanel("Calculate prediction and results", h2("Personal information"),
                             textOutput("myname"),
                             textOutput("mysliderage"), 
                             textOutput("mygender"),
@@ -29,7 +29,7 @@ shinyUI(fluidPage(
                             textOutput("mydiabetes"),
                             textOutput("mysbp"),
                             textOutput("mymedication"),
-                            h3("Prediction"),
+                            h2("Prediction"),
                             textOutput("myPrediction"),
                             plotOutput('plot')),
                    tabPanel("Instructions", fluidPage(htmlOutput('instructions'))),

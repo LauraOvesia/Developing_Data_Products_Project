@@ -38,7 +38,7 @@ Conclusions
 The provided app here allows the user to:
 
 
-App URL: https://laurao.shinyapps.io/
+App URL: https://laurao.shinyapps.io/developing_data_productsProject/
 
-Documentation and Code: https://github.com/
+Documentation and Code: https://github.com/LauraOvesia/developing_data_productsProject
 

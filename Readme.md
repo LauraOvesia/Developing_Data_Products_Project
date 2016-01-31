@@ -5,6 +5,8 @@
 To run the application, please visit the following URL to access the app:
 (https://laurao.shinyapps.io/developing_data_productsProject/)
 
+The source code is located here - https://github.com/LauraOvesia/developing_data_productsProject
+
 The sidebar on the left has 7 important input options that will allow the user to enter the data necessary to calculate the risk of having a heart attack in the next 10 years. 
 
 Manipulating any of the options listed above will recalculate the prediction.
@@ -14,13 +16,8 @@ More data about the Framingham Heart Study is available  here - https://en.wikip
 
 For this app we will use just a subset from the Framingham database, using just the most important columns that can influence the prediction results.
 
-The substructure of the modified database is:
+The substructure of the modified database used in this application is available in the Prediction Database Structure tab, and some sample values are available in the Prediction Database Head tab.
 
-```{r echo=FALSE}
-framingham <- read.csv("framingham.csv")
 
-newFramingham<- data.frame(age=framingham$age,male=framingham$male,totChol=framingham$totChol,currentSmoker=framingham$currentSmoker,diabetes=framingham$diabetes,sysBP=framingham$sysBP,BPMeds=framingham$BPMeds,TenYearCHD=framingham$TenYearCHD)
 
-str(newFramingham)
-```
 
